@@ -101,23 +101,25 @@
 
 	//include('employee_db.php');
 	if(isset($_POST['add_data'])){
+
+			//echo "<script>alert($id);</script>";
 		
-			//id = $_POST['id'];
-	 		//$EMPNO = $_POST['empno'];
-	 		//$ENAME = $_POST['ename'];
-	 		//$JOB = $_POST['job'];
-	 		//$MGR = $_POST['mgr'];
-	 		//$HIREDATE = $_POST['hiredate'];
-	 		//$SAL = $_POST['sal'];
-	 		//$COMM = $_POST['comm'];
-			//$DEPTNO = $_POST['deptno'];
+			$id = $_POST['id'];
+	 		$EMPNO = $_POST['empno'];
+	 		$ENAME = $_POST['ename'];
+	 		$JOB = $_POST['job'];
+	 		$MGR = $_POST['mgr'];
+	 		$HIREDATE = $_POST['hiredate'];
+	 		$SAL = $_POST['sal'];
+	 		$COMM = $_POST['comm'];
+			$DEPTNO = $_POST['deptno'];
 			
-			$sql = " INSERT INTO emp (`EMPNO`, `ENAME`, `JOB`, `MGR`, `HIREDATE`, `SAL`, `COMM`, `DEPTNO`) VALUES ( )";
+			$sql_insert = " INSERT INTO emp (`EMPNO`, `ENAME`, `JOB`, `MGR`, `HIREDATE`, `SAL`, `COMM`, `DEPTNO`) VALUES ($EMPNO,'$ENAME','$JOB',$MGR,'$HIREDATE',$SAL,$COMM,$DEPTNO)";
 			
-			echo $sql;
-			$result = mysqli_query($conn,$sql);
+			echo $sql_insert;
+			$result_insert = mysqli_query($conn,$sql_insert);
 	// 		$result = mysqli_query($conn,);
-	 		if($result){
+	 		if($result_insert){
 	 			echo "<script>alert('Data Added Sucessfully!')</script>";
 				header("Refresh:0");
 		
